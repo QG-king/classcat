@@ -15,9 +15,18 @@
           <img style="width: 40px" src="@/assets/imgs/logo.png" alt="" />
           <div style="margin-left: 5px">校园课程智能助手</div>
         </div>
-        <div style="display: flex; align-items: center">
-          <img src="@/assets/imgs/logo.png" alt="" style="width: 30px; border-radius: 50%" />
-          <div style="margin-left: 3px">管理员</div>
+        <div>
+          <el-dropdown>
+            <div style="display: flex; align-items: center; cursor: pointer">
+              <img src="@/assets/imgs/logo.png" alt="" style="width: 30px; border-radius: 50%" />
+              <div style="margin-left: 3px">管理员</div>
+            </div>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
         </div>
       </el-header>
       <el-container>
@@ -51,4 +60,9 @@
 
 <script setup>
 import { Menu as IconMenu, House, Setting, User } from '@element-plus/icons-vue'
+
+const logout = () => {
+  router.push('/login') // 跳转到登录页面
+  // 退出登录的逻辑
+}
 </script>
