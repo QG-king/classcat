@@ -60,6 +60,7 @@
 
 <script setup>
 import { Menu as IconMenu, House, Setting, User } from '@element-plus/icons-vue'
+import router from '@/router'
 
 const logout = () => {
   router.push('/login') // 跳转到登录页面
